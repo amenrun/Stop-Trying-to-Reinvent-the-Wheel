@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 1</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+Fred: <span id='Fred'></span><br />
+Mary: <span id='Mary'></span><br />
+Bill: <span id='Bill'></span>
+<p>O(id)，可使用单引号来引用字符串，也可以将id赋予一个变量名；</p>
+<p>O(id, property, value)，可以一次性访问多个对象（允许在数组内部混合两种对象的引用，如上）</p>
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   ids = Array('Fred', 'Mary', 'Bill')
+   O(ids, 'innerHTML', 'New contents...')
+   O(ids, 'style.color', 'red')
+}
+
+</script>
+</body>
+</html>
