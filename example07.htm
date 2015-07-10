@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 7</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+What is your name? <b><span id='name'></span></b>
+<p>目的：返回被按下的键盘按键名称，可以把他储存在一个隐藏的地方，像游戏中按下特定的键后可以触发一个额外的功能一样神秘有趣</p>
+<p>原理：键盘储存值KEY_PRESS是一个常量，用于储存键盘按下的键名（字母、数字、符号、特殊按键）</p>
+<p>用法：每一次按下键盘，函数将KEY_PRESS赋值给变量k，并重置，为下一次按键储存键名</p>
+<p>工作：无需参数</p>
+<p>代码：GetLastKey()</p>
+
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   input('name')
+
+   function input(id)
+   {
+      var interrupt = setInterval(simpleInterrupt, INTERVAL)
+
+      function simpleInterrupt()
+      {
+         var k = GetLastKey()
+
+         if (k == 'Enter')
+         {
+            k = '.'
+            clearInterval(interrupt)
+         }
+         O(id).innerHTML += k
+      }
+   }
+}
+
+</script>
+
