@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 4</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='output'></div><p>
+
+PaddingPaddingPaddingPaddingPaddingPaddingPaddingPaddingPaddingPaddingPaddingPadding
+<p>目的：显示鼠标位置的详细信息</p>
+<p>原理：捕获document.onmouseover事件，将全局变量MOUSE_X、MOUSE_Y、SCROLL_X、SCROLL_Y设置为鼠标当前的x、y坐标</p>
+<p>用法：提供MOUSE_X、MOUSE_Y、SCROLL_X、SCROLL_Y</p>
+<p>工作：只需调用Initialize()</p>
+<p>代码：MOUSE_X、MOUSE_Y、SCROLL_X、SCROLL_Y</p>
+
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   interrupt = setInterval(simpleInterrupt, INTERVAL)//INTERVAL默认为30毫秒
+
+   function simpleInterrupt()
+   {
+      O('output').innerHTML = 
+         "  Mouse X,Y = " + MOUSE_X  + "," + MOUSE_Y +
+         " Scroll X,Y = " + SCROLL_X + "," + SCROLL_Y
+   }
+}
+
+</script>
