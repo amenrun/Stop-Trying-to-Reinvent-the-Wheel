@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 15</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+This example JavaScript looks like this:
+<pre>
+&lt;script&gt;
+
+alert(InsVars("The product of #1 and #2 is #3", 6, 7, 6 * 7))
+
+&lt;/script&gt;
+</pre>
+<p>有这么一个现象：输出字符串和变量值时需要用+连接，并需要把每个字符串用''关闭起来。</p>
+<p>目的：方便在字符串中插入变量值</p>
+<p>工作：#的个数要和插入的变量值个数一样</p>
+<p>代码：InsVars("The product of #1 and #2 is #3 #···",a,b,c,···)</p>
+
+</body></html>
+
+<script>
+
+window.onload = function()
+{
+   alert(InsVars("The product of #1 and #2 is #3", 6, 7, 6 * 7))
+}
+
+</script>
+
+
