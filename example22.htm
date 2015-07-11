@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 22</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='moveme'>Move Me</div>
+<p>目的：设置对象的position属性</p>
+<p>原理：给对象设置position的某个属性，可使用全局变量ABS、FIX、REL、STA、INH</p>
+<p>工作：需要对象的id（或数组）,type即position的5个属性值absolute、fixed、relative、static、inherit</p>
+<p>代码：Position('id',type)</p>
+<p>注意：对于absolute和relative属性值，除位置改变外还需考虑div大小的自动收缩，absolute会以适应内容relative不会而是保留原来的大小。如果是span则总是自动收缩以适应内容</p>
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   S('moveme').backgroundColor = 'red'
+   S('moveme').color           = 'white'
+   Position('moveme', REL)
+   S('moveme').left            = Px(100)
+}
+
+</script>
+
+
