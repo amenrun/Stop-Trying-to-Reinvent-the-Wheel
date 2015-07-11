@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 19</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='example'>Example div</div>
+<p>目的：更改对象的大小</p>
+<p>原理：可以调整具有width的对象的宽度</p>
+<p>工作：需要对象的id（或数组）,新的宽度值</p>
+<p>代码：ResizeWidth('id',number新的宽度值)</p>
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   S('example').backgroundColor = 'blue'
+   S('example').color           = 'yellow'
+   ResizeWidth('example', 300)
+}
+
+</script>
+
+
