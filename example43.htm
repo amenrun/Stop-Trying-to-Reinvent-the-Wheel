@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 43</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<img id='globe' src='i1.gif'>
+<p>目的：允许将对象在一定时间内从一个位置滑动到另一个位置，只能支持一个对象，无法支持一个数组对象</p>
+<p>工作：需要id，对象初始位置的左上角坐标，最终位置的左上角坐标，时间msecs，可否中断1or0</p>
+<p>代码：Slide('id', frx, fry, tox, toy, msecs, 0 or 1)</p>
+<p>注意：为了能产生动画的效果，首先需设置对象的position属性从默认位置释放。为了响应鼠标事件，设置了由鼠标触发的两个动画。如果使用一个具有不同移动距离或不同时间长度的动画来中断另一个动画，则看两个动画的移动速度将不一致，一般不采用这种情况</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   Position('globe', ABS)
+   Slide('globe', 0, 100, 450, 0, 1500, 0)
+
+   O('globe').onmouseover = function()
+      { Slide(this, 450, 0,  450, 50, 500, 1) }
+   O('globe').onmouseout  = function()
+      { Slide(this, 450, 50, 450, 0,  500, 1) }
+}
+
+</script>
