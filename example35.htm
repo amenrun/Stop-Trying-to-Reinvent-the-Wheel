@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Plug-in JavaScript: Example 35</title>
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<center><br />
+<img id='i1' src='i1.gif' />
+<img id='i2' src='i2.gif' />
+</center>
+<p>目的：可以使对象随时间平滑的改变不透明度，实现淡入淡出的效果</p>
+<p>工作：id，不透明度初始值，最终值，渐变的毫秒时间，渐变可否中断0和1</p>
+<p>注意：直接为对象分配新的属性是利用javascript的面向对象功能的方法</p>
+<p>代码理解：整个过渡时间为1000ms，整个过渡过程分为a=1000/30步，整个过渡区间为b=|0-100|，则每步过渡b/a的效果，1000ms后完成过渡。stepval是每一步过渡的量。这个插件使用了父函数中设置私有子函数，共享父函数的局部变量，只能被父函数使用，非常适合用作中断或事件驱动函数</p>
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   O('i1').onmouseover = function() { Fade('i1', 100, 0, 1000, 0) }
+   O('i1').onmouseout  = function() { Fade('i1', 0, 100, 1000, 0) }
+   O('i2').onmouseover = function() { Fade('i2', 100, 0, 1000, 1) }
+   O('i2').onmouseout  = function() { Fade('i2', 0, 100, 1000, 1) }
+}
+
+</script>
+
