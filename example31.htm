@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 31</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<span id='ghost'>Now you see me...</span> and soon you won't
+<p>目的：用于将对象从网页中隐藏，同时占据的空间依然存在</p>
+<p>原理：适合在隐藏对象的同时希望保持原来的布局，可以保持对象的尺寸</p>
+<p>工作：需要对象的id（或是数组）</p>
+<p>代码：Invisible('id')</p>
+
+</body></html>
+<script>
+
+window.onload = function()
+{
+   S('ghost').backgroundColor = 'lightblue'
+   Resize('ghost', 128, 32)
+   alert('Click OK to see the object disappear')
+   Invisible('ghost')
+}
+
+</script>
+
+

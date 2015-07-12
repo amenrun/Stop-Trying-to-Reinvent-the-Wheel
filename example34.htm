@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 34</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<center>Click the buttons<p>
+<input type='submit' value='25 percent' onclick='Opacity(this, 25)' />
+<input type='submit' value='50 percent' onclick='Opacity(this, 50)' />
+<input type='submit' value='75 percent' onclick='Opacity(this, 75)' />
+</p>
+</center>
+<p>目的：用于将对象的不透明度设置为0~100之间的任意值，更加细微的控制对象的可见性</p>
+<p>工作：需要对象的id（或是数组），0~100的不透明度值</p>
+<p>代码：Opacity('id', 0~100)</p>
+<p>注意：this关键字是一个对象，作为参数传递给插件</p>
+</body></html>

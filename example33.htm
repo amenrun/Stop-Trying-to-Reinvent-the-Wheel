@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 33</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<input type='submit' value='Click Me'
+   onclick="VisibilityToggle('toggle')" />
+
+<span id='toggle'>Toggling Text</span>
+<p>目的：用于改变对象的可见性</p>
+<p>原理：将对象的可见性属性的相反状态应用到对象本身</p>
+<p>用法：可以直接调用VisibilityToggle('id')，也能传递一个数组VisibilityToggle(ids)，也能像本例一样集成在html中</p>
+<p>工作：需要对象的id（或是数组）</p>
+<p>代码：VisibilityToggle('id')</p>
+
+</body></html>
