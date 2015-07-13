@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/hmtl; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 89</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<h2>Please contact me at: <span id='email'></span>.</h2>
+<p>目的：可以以某种方式显示电子邮件地址，可以单击或复制，可以打乱电子邮件地址，阻止自动化电子邮件收集程序</p>
+<p>工作：将邮件地址分成多个字符串</p>
+<p>代码：</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   Html('email', ProtectEmail('sim', 'on.j', 'ones',
+      '@myserv', 'er.c', 'om'))
+}
+
+</script>
+

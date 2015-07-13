@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/hmtl; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 88</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<h2>File: example88.htm</h2>
+
+<h3>This web page will load another one within an iframe</h3>
+
+<iframe src='frametest.htm' width='534' height='140' />
+
+<p>目的：可以检查网页是否在一个frame中，如果是，则将当前页面显示在父页面（带一段提示语调用）。也可以自动关闭网页的嵌入frame（不带参数调用）</p>
+<p>工作：是否带提示语</p>
+<p>代码：FrameBust("This page has been loaded up within a surrounding frame.\n" +
+   "Please click [OK] if you would like to close the surrounding frame.")</p>
+</body></html>

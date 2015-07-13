@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/hmtl; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 86</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='a'></div>
+<p>目的：获取网页等，使用get</p>
+<p>工作：对象id（不能为数组），获取数据后传递返回的函数，进行通信的url，传递给url的任何参数</p>
+<p>代码：GetAjaxRequest('a', todiv, url, args)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   url  = 'ajaxget.php'
+   args = 'url=http://wikipedia.org/'
+   GetAjaxRequest('a', todiv, url, args)
+
+   function todiv()
+   {
+      Html('a', this)
+   }
+}
+
+</script>
+

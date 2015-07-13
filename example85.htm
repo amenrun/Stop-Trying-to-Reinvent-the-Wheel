@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/hmtl; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 85</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='a' style='text-align:justify'>The data fetched by Ajax will appear here</div>
+<p>目的：创建新的ajax对象，在后台向web服务器发送或接收信息，即对web服务器的后台调用，浏览器在处理请求时不会干扰当前的web应用程序</p>
+<p>工作：一个对象id（不能为数组），获取数据后传递返回的函数</p>
+<p>代码：</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   url = 'ajaxtest.htm'
+   GetAjaxRequest('a', todiv, url)
+
+   function todiv()
+   {
+      Html('a', this)
+   }
+}
+
+</script>
+
