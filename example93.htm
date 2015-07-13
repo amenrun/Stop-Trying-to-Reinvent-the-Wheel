@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 93</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+Password: <input id='pass' type='password' name='pass' />
+<button id='button'>Submit</button>
+<p>目的：检查输入密码是否符合要求</p>
+<p>工作：需要验证的密码字符串，最小密码长度，最大密码长度，至少包含一个大写字母，至少包含一个小写字母，至少包含一个数字，至少包含一个非字母数字字符</p>
+<p>代码：ValidatePassword(O('pass').value, 8, 16, 1, 1, 1, 1)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   O('button').onclick = function()
+   {
+      if (ValidatePassword(O('pass').value, 8, 16, 1, 1, 1, 1))
+         alert("That password is valid")
+      else alert("That password is invalid")
+   }
+}
+
+</script>
+

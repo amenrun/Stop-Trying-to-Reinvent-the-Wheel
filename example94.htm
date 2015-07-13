@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Plug-in JavaScript: Example 94</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+Credit Card Number:
+<input id='ccnum' type='text' name='ccnum' size='24' />
+<button id='button'>Submit</button>
+<p>目的：可以操作字符串，如删除空格，删除数字等</p>
+<p>工作：要处理的字符串，删除空格，删除数字，删除文本，删除标点符号，大写转换小写，小写转换大写，多个空格转换为一个空格</p>
+<p>代码：CleanupString(O('ccnum').value , 1 ,0 ,1, 1, 0, 0, 0)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   O('button').onclick = function()
+   {
+      O('ccnum').value =
+         CleanupString(O('ccnum').value , 1 ,0 ,1, 1, 0, 0, 0)
+   }
+}
+
+</script>
+

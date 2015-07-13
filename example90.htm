@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 90</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<h2>Signup Form</h2>
+<pre>
+Name:  <input id='name'  type='text' size='50'/>
+Email: <input id='email' type='text' size='50'/>
+</pre>
+<p>目的：当一个输入框没有输入文本之前可以显示提示信息，一旦准备输入则消失</p>
+<p>工作：需要表单对象id（不能是数组），提示的文字，输入内容的颜色，提示文字的颜色，提示文字的字体样式</p>
+<p>代码：FieldPrompt('name', "Please enter your name",
+      '#000000', '#444444', 'italic')</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   FieldPrompt('name', "Please enter your name",
+      '#000000', '#444444', 'italic')
+   FieldPrompt('email', "Please enter your email address",
+      '#000000', '#444444', 'italic')
+}
+
+</script>
