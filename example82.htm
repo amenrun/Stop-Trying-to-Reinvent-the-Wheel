@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 82</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<span id='movie'></span>
+<p>目的：播放视频</p>
+<p>工作：一个youtube视频标识符，宽度和高度，高质量播放，允许全屏，自动播放</p>
+<p>代码：EmbedYouTube('apEZpYnN_1g', 320, 240, 'true', 'true', 1)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   Html('movie', EmbedYouTube('apEZpYnN_1g', 320, 240, 'true', 'true', 1))
+}
+
+</script>

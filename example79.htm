@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 79</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='billb' style='display:none'>
+<font face='Times New Roman'>
+
+   <div id='b1'><img id='p1' src='palace.png' align='left' style=
+   'padding-right:10px'>For sale: 600 room, 300 year old central London
+   house, located close to all the amenities, right in the heart of
+   Westminster.</div>
+
+   <div id='b2'><img id='p2' src='plan.png' align='right' style=
+   'padding-left:10px'>829,818 sq ft: Historical setting, famous
+   residents, exquisitely decorated throughout. Phone 555 1234 for more
+   details.</div>
+
+   <img id='b3' src='london.png' />
+</font>
+</div>
+<p>目的：允许在播放中放置任何对象，并且已经是存在于文档中的图像</p>
+<p>工作：需要容器的对象id，播放的对象数组，是否随机播放，动画时间，过渡下一个对象的间隔时间</p>
+<p>代码：Billboard('billb', objects, 1, 500, 3000)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   S('billb').border = 'solid 1px'
+   Resize('billb', 320, 100)
+   objects = Array('b1', 'b2', 'b3')
+   Resize(objects, 320, 100)
+   S(objects, 'background.Color', '#ffffff')
+   Show('billb')
+   Billboard('billb', objects, 1, 500, 3000)
+
+   O('billb').onmouseover = pause
+   O('billb').onmouseout  = resume
+
+   function pause()
+   {
+      Billboard('billb', '', '', '', 'stop')
+   }
+   
+   function resume()
+   {
+      Billboard('billb', objects, 1, 500, 3000)
+   }
+}
+
+</script>

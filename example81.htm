@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 81</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<span id='sound'></span>
+
+<img id='a1' src='avatar1.jpg'>
+<img id='a2' src='avatar2.jpg'>
+<img id='a3' src='avatar3.jpg'>
+<img id='a4' src='avatar4.jpg'>
+<p>目的：根据鼠标移动、按钮事件、键盘事件或其他来播放声音</p>
+<p>工作：需要容器的对象id（不能为数组），播放的声音url，是否循环播放（true则循环播放，stop则停止播放，其他值则只播放一次）</p>
+<p>代码：PlaySound('sound', 'bloop.wav', 0)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   ids = Array('a1', 'a2', 'a3', 'a4')
+   O(ids, 'onmouseover', bloop)
+
+   function bloop()
+   {
+      PlaySound('sound', 'bloop.wav', 0)
+   }
+}
+
+</script>

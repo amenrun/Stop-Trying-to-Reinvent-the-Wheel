@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 78</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<button id='link' type='button'>Click Me</button>
+
+<p align='justify'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<div id='show'></div>
+<p>目的：可以在浏览器中央显示图像（根据url），并使外部空间变暗但透明，还能单击就关闭灯箱恢复网页，并且还能像幻灯片一样自动播放一系列图像</p>
+<p>工作：容器对象id（不能为数组），图像数组（最好是相同尺寸），过渡的时间，每次过渡之间的等待时间（如果是stop则停止播放并退出）</p>
+<p>代码：Slideshow('show', photos, 500, 2000)</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   Resize('show', 320, 240)
+   Hide('show')
+   photos = Array('photo1.jpg', 'photo2.jpg',
+      'photo3.jpg', 'photo4.jpg', 'photo5.jpg')
+
+   O('link').onclick = function()
+   {
+      Slideshow('show', photos, 500, 2000)
+      Lightbox('show', '#888888', '000000', 80, 500, 1)
+   }
+}
+
+</script>
