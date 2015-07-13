@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 71</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<font face='Courier New' size='6'><b>
+<div id='text' style='display:hidden'>The quick brown fox jumps over the lazy dog.</div>
+</b></font>
+<p>目的：可以在指定的时间模拟打字机行为逐个字符地输出所选定的文本，并且可以设置重复滚动次数</p>
+<p>工作：对象id（可以是数组），重复的次数（0表示无限次重复），一次滚动的动画时间</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   TextType('text', 1, 5000)
+}
+
+</script>
