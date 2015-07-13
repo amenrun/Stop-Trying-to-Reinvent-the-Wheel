@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 69</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<div id='click'><u>Click me to raise the window</u></div>
+
+<table id='window' bgcolor='lightblue' cellpadding='5'>
+   <tr>
+      <td id='header' width='310' align='center'>
+         <font face='Arial'><b>In Browser Window</b></font>
+      </td>
+      <td id='close' width='20' bgcolor='red' align='center'>
+         <font face='Arial' color='white'><b>X</b></font>
+      </td>
+   </tr>
+   <tr>
+      <td id='content' colspan='2' bgcolor='#eeeeee'>
+         <img id='image' src='pijsmall.png' align='left' />
+         <font face='Verdana' size='2'>
+            JavaScript is the free language built into all modern 
+            browsers and is the power behind dynamic HTML and the Ajax
+            used for Web 2.0 websites. <br />&nbsp; &nbsp; Plug-in
+            JavaScript is aimed squarely at people who have learned
+            basic HTML (and perhaps a little CSS) but are interested
+            in doing more. For more details please <a href=
+            'http://pluginjavascript.com' target='New'>visit the
+            website</a>.
+         </font>
+      </td>
+   </tr>
+</table>
+<p>目的：弹出一个窗口，保持显示，用户可以自由的控制，可以移动，可以关闭</p>
+<p>工作：需要一个容器的id不能是数组， 一个可移动的对象id， 一个课关闭的对象id， 窗口的坐标， 是否可以移出浏览器窗口， 4个过渡效果，（注意：如果过渡类型是inflate zoom： 1 or 0 从水平改变尺寸，1 or 0 从垂直改变尺寸）， 动画时间， 是否中断</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   Hide('window')
+   x = (GetWindowWidth()  - 330) / 2
+   y = (GetWindowHeight() - 245) / 2
+
+   S('window').border = 'solid 2px'
+   Position('window', ABS)
+   PopDown('window', 'fade', null, null, 1, false)
+   Resize('window', 330, 245)
+   S('window').overflow = 'hidden'
+
+   S('click').cursor       = 'pointer'
+   S('image').paddingRight = Px(10)
+   S('content').border     = 'solid 1px'
+   S('content').textAlign  = 'justify'
+
+   O('click').onclick = function()
+   {
+      BrowserWindow('window', 'header', 'close', x, y, true,
+         'fade', null, null, 500, false)
+   }
+}
+
+</script>

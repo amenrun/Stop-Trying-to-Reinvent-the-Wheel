@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Plug-in JavaScript: Example 61</title>
+
+<script src="PJ.js"></script>
+<script>Initialize()</script>
+
+</head><body>
+
+<center><a href=example61.htm>Reload</a><br /><br />
+<img id='a1' src='avatar1.jpg'>&nbsp; &nbsp;
+<img id='a2' src='avatar2.jpg'>&nbsp; &nbsp;
+<img id='a3' src='avatar3.jpg'>&nbsp; &nbsp;
+<img id='a4' src='avatar4.jpg'></center>
+<p>目的：按不同的过渡效果从浏览器删除一个对象</p>
+<p>工作：PopDown('a1', 'fade',    1, 1, 500, 0)对象id，过渡效果fade inflate zoom instant， 1 or 0从水平过渡， 1 or 0从垂直过渡，动画时间，是否中断</p>
+</body></html>
+<script>
+
+window.onload = function()
+{
+   O('a1').onmouseover = function() {PopDown('a1', 'fade',    1, 1, 500, 0)}
+   O('a2').onmouseover = function() {PopDown('a2', 'inflate', 1, 0, 500, 0)}
+   O('a3').onmouseover = function() {PopDown('a3', 'zoom',    1, 1, 500, 0)}
+   O('a4').onmouseover = function() {PopDown('a4', 'instant', 1, 1, 500, 0)}
+}
+
+</script>
