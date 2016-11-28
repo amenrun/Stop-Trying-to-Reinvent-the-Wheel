@@ -34,3 +34,18 @@ function getWeekdateSort(date) {
     }
     return weekDate;
 }
+
+/**
+ * 将string的经（纬）度转化为float类型
+ * @param  {String} Lstr 经（纬）度
+ * @return {Float}      经（纬）度
+ */
+function change_S_to_F(Lstr) {
+    var len = Lstr.slice(Lstr.indexOf(".") + 1).length,
+        Lfloat;
+    for(var i = 0, a = 1; i < len; i++){
+        a *= 10;
+    }
+    Lfloat = parseInt(Lstr.slice(0, Lstr.indexOf("."))) + (parseInt(len) / a);
+    return Lfloat;
+}
