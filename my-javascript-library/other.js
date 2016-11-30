@@ -13,7 +13,7 @@ function getWeekSort(date) {
 }
 
 /**
- * 得到一周中某天的顺序位置，一周以周一开头，周日排第7
+ * 得到某天在一周中的顺序位置，一周以周一开头，周日排第7
  * @param  {String} weekday 一周中的某天，如周一
  * @return {Number}         如1
  */
