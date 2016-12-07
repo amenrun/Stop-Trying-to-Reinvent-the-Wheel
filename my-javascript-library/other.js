@@ -156,3 +156,14 @@ function getDiffValueSort(arr1, arr2) {
     }
     return newArr;
 }
+
+/**
+ * 获取当前url指定查询字段的值，没有则返回null
+ * @param  {String} name 查询字段名
+ * @return {String}      查询字段的值
+ */
+function getUrlParam(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)'),
+        r = location.search.substr(1).match(reg);
+    return r? decodeURI(r[2]): null;
+}
