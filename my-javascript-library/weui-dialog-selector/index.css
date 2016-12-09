@@ -1,0 +1,69 @@
+/* 时间选择器 */
+.xx_mask{
+    opacity: 0;
+    -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+    visibility: hidden;
+}
+/* 设置透明度渐变 */
+.xx_mask.xx_mask_visible{
+    opacity: 1;
+    visibility: visible;
+}
+.xx{
+    width: 70%;
+    -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+/* 设置宽度渐变 */
+.xx.xx_visible{
+    width: 85%;
+    opacity: 1;
+    visibility: visible;
+}
+/* 固定scroll区域的高度 */
+.xx_body{
+    height: 144px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    text-align: center;
+}
+/* 设置li固定的高度 */
+.xx_body ul li{
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    color: #ccc;
+}
+/* 设置中间分隔线样式 */
+.xx_indicate{
+    position: absolute;
+    top: 47px;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+}
+.xx_indicate:before,
+.xx_indicate:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #D5D5D6;
+    color: #D5D5D6;
+    -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.xx_indicate:after{
+    top: 48px;
+}
+.xx_body li.selected{
+    color: #000;
+}

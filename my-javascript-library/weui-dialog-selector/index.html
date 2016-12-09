@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <title>选择器-weui-dialog风格</title>
+
+    <!-- 引入 weui样式库 -->
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">
+    <!-- 样式表 -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body ontouchstart>
+
+<!-- 引入zepto库 -->
+<script src="zepto.min.js"></script>
+<!-- 引入iscroll 移动端滚动 -->
+<script src="iscroll-probe.js"></script>
+<!-- 逻辑脚本 -->
+<script src="index.js"></script>
+<script>
+var scrollBodyHTML = '<li class="selected" data-value="1">第一列</li>' +
+                     '<li data-value="2">第二列</li>' +
+                     '<li data-value="3">第三列</li>';
+renderSelector("测试", scrollBodyHTML, function(value) {
+    console.log(value);
+}, function() {
+    console.log("cancel");
+})
+</script>
+
+</body>
+</html>
