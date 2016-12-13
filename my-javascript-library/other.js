@@ -167,3 +167,43 @@ function getUrlParam(name) {
         r = location.search.substr(1).match(reg);
     return r? decodeURI(r[2]): null;
 }
+
+/**
+ * 计算结束时间，不会超过同一天
+ * @param  {Float}  timeLong  时长，比如一个半小时为1.5
+ * @param  {String} timeBegin 开始时间
+ * @return {String}           结束时间
+ */
+function calTimeEnd(timeLong, timeBegin) {
+    var timeLongStr = timeLong.toString(), // 转化为字符串，判断是否有小数位
+        time = timeBegin.split(":"),
+        hour = parseInt(time[0]), // 开始时间的小时数
+        minutes = parseInt(time[1]), // 开始时间的分钟数
+        longHour = 0, // 需要增加的小时数
+        longMinutes = 0; // 需要增加的分钟数
+
+    // 如果时长有小数位
+    if(timeLongStr.indexOf(".") !== -1) {
+        var min = timeLongStr.split(".")[1],
+            minLen = min.length;
+        longHour = parseInt(timeLong);
+        longMinutes = parseInt(min) / Math.pow(10, minLen) * 60;
+    }else{ // 如果时长为整数
+        longHour = timeLong;
+    }
+
+    // 分钟数相加后>=60，小时数+1，分钟数-60
+    if(minutes + longMinutes >= 60) {
+        hour++;
+        minutes = minutes + longMinutes - 60;
+    }else{ // 不超过60，直接相加
+        minutes = minutes + longMinutes;
+    }
+
+    // 得到结束时间
+    hour += longHour;
+    if (minutes === 0) { // 避免分钟显示0
+        minutes = "00";
+    }
+    return hour + ":" + minutes;
+}
